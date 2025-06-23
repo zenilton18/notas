@@ -46,20 +46,6 @@
                     <div class="text-center text-secondary mt-3">
                         <small>&copy; <?= date('Y') ?> Notes</small>
                     </div>
-                    @if ($errors->any())
-                    <div class="alert alert-danger mt-2">
-                        <ul>
-                            @foreach ($errors->all() as $erros)
-                            <li>
-                                {{$erros}}
-                            </li>
-                                
-                            @endforeach
-                        </ul>
-                    </div>
-                        
-                    @endif
-
                 </div>
             </div>
         </div>

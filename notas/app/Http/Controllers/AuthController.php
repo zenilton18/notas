@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use PDOException;
 
 class AuthController extends Controller
 {
@@ -29,6 +32,13 @@ class AuthController extends Controller
             );
         $userName = $request->input('text_username');
         $password = $request->input('text_password');
+
+        try {
+            DB::connection()->getPdo();
+        } catch (\PDOException $erros) {
+            echo 'A conexão falhou'. $erros->getMessage();
+            //throw $th;
+        }
         
         
         echo 'ok';
