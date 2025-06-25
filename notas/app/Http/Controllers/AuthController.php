@@ -53,6 +53,9 @@ class AuthController extends Controller
                     'nome' => $user->nome
                 ]
             ]);
+
+            return redirect()->to('/');
+            
         } catch (\PDOException $erros) {
             echo 'A conexão falhou'. $erros->getMessage();
             //throw $th;

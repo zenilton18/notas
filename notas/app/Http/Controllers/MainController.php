@@ -8,7 +8,7 @@ class MainController extends Controller
 {
     public function index()
     {
-        echo 'principal';
+       return view('home');
     }
     public function newNota()
     {
