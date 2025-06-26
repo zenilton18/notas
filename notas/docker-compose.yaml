@@ -32,9 +32,9 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: laravel
-      MYSQL_USER: laravel
-      MYSQL_PASSWORD: secret
+      MYSQL_DATABASE: notas
+      MYSQL_USER: laravel_nota
+      MYSQL_PASSWORD: 1oDel4mIpi21ca4E5aXu2oMeq2v72i
     volumes:
       - dbdata:/var/lib/mysql
     networks:
