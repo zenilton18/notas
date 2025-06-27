@@ -7,12 +7,13 @@ class Operacoes
 {
     public static  function decryptId($id)
     {
+      // check if $value is encrypted
         try {
             $id = Crypt::decrypt($id);
-        } catch (DecryptException $erro) {
-            return redirect()->route('home');
+        } catch (DecryptException $e) {
+            return null;
         }
-        return $id;
+        return $id; 
     }
 }
 
