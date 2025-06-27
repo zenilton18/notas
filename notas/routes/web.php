@@ -15,8 +15,11 @@ Route::middleware([ChekinIsNotlogged::class])->group(function(){
 
 #rotas para verificar login
 Route::middleware([ChekinIslogged::class])->group(function(){
-    Route::get('/' ,[MainController::class, 'index']);
-    Route::get('/newNota', [MainController::class, 'index']);
-    Route::get('/logout',[AuthController::class,'logout']);
+    Route::get('/' ,[MainController::class, 'index'])->name('home');
+    Route::get('/newNota', [MainController::class, 'newNota'])->name('new');
+
+    Route::get('/editar/{id}',[MainController::class, 'editarNota'])->name('editar');
+    Route::get('/delete/{id}',[MainController::class, 'deletarNota'])->name('deletar');
+    Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 });
 

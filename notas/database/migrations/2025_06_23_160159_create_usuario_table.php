@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usuario', function (Blueprint $table) {
+        Schema::create('usuarios', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('nome',50);
             $table->string('senha',200);
-            $table->dateTime('ultimo_login')->nullable;
+            $table->dateTime('ultimo_login')->nullable();
             $table->timestamps();
-            $table->softDeletes();
+            $table->softDeletes()->nullable();
         });
     }
 

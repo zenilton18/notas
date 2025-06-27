@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('nota', function (Blueprint $table) {
+        Schema::create('notas', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->integer('id_usuario');
+            $table->integer('id_usuario')->nullable();
             $table->string('titulo',50)->nullable();
-            $table->string('descricao',50);
+            $table->string('descricao',50)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

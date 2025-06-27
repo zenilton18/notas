@@ -61,6 +61,11 @@ class AuthController extends Controller
             //throw $th;
         }
     }
+    public function newNota()
+    {
+        echo 'ou';
+
+    }
     public function logout()
     {
         session()->forget('user');
