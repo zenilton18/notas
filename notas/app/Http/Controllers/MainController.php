@@ -95,11 +95,8 @@ class MainController extends Controller
     {
         $id = Operacoes::decryptId($id); 
         $nota = Nota::find($id);
-        
-        echo('<pre>');
-        print_r('aqui');
-        echo('</pre>'); die();
-
+        $nota->delete();
+        return redirect()->route('home');
     }
    
 }
